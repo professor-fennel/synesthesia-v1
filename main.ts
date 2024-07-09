@@ -68,6 +68,14 @@ let c_maj_pent_scale = [
 1568,
 1760
 ]
+let small_c_pent_scale = [
+261.6,
+293.7,
+329.6,
+392,
+440,
+523.3
+]
 basic.showLeds(`
     . # # # .
     # . . . .
@@ -77,9 +85,9 @@ basic.showLeds(`
     `)
 basic.forever(function () {
     if (mode == 0) {
-        hz = c_maj_pent_scale[Math.floor(Math.map(pins.analogReadPin(AnalogPin.P0), 0, 900, 0, c_maj_pent_scale.length - 1))]
+        hz = small_c_pent_scale[Math.floor(Math.map(pins.analogReadPin(AnalogPin.P0), 0, 1200, 0, small_c_pent_scale.length - 1))]
     } else {
-        hz = Math.map(pins.analogReadPin(AnalogPin.P0), 0, 900, c_maj_pent_scale[0], c_maj_pent_scale[c_maj_pent_scale.length - 1])
+        hz = Math.map(pins.analogReadPin(AnalogPin.P0), 0, 1200, 40, 1000)
     }
     makerbit.showStringOnLcd1602("P0", makerbit.position1602(LcdPosition1602.Pos1), 2)
     makerbit.showStringOnLcd1602("" + pins.analogReadPin(AnalogPin.P0), makerbit.position1602(LcdPosition1602.Pos4), 12)
