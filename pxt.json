@@ -4,12 +4,15 @@
     "dependencies": {
         "core": "*",
         "radio": "*",
-        "microphone": "*"
+        "microphone": "*",
+        "midi": "github:microsoft/pxt-midi#v2.2.0",
+        "MakerBit-LCD1602": "github:1010technologies/pxt-makerbit-lcd1602#v1.8.10"
     },
     "files": [
         "main.blocks",
         "main.ts",
-        "README.md"
+        "README.md",
+        "main.py"
     ],
     "testFiles": [
         "test.ts"
